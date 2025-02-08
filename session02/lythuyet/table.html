@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+        TABLE: Bảng
+        tr: biểu thị hàng
+        td: cột
+        th: dùng trong thead khi muốn nhấn mạnh nội dung
+        nội dung sẽ được căn chính giữa cột
+
+        ** các thuộc tính(attribute) của bảng
+        border: đường viền của bảng (đặt trong thẻ mở của table)
+        cellpadding: khoảng cách từ viền của cột đến nội dung
+        cellspacing: khoảng cách từ viền của bảng đến viền của cột
+        colspan: gộp các cột
+        rowspan: để gộp các hàng    
+    -->
+    <!-- <table border="1" >
+        <tr>
+            <td>STT</td>
+            <td>Tên</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Nguyễn Văn A</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Trần Thị B</td>
+        </tr>
+
+    </table> -->
+    <table border="1" cellpadding="5" cellspacing="5">
+        <caption>quản lý sinh viên</caption>
+        <thead>
+            <!-- phần đầu của bảng -->
+            <tr>
+                <th>STT</th>
+                <th bgcolor="red">Tên</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- phần thân bảng -->
+            <tr>
+                <td align="center" rowspan="2">1</td>
+                <td>Nguyễn Văn A</td>
+            </tr>
+            <tr>
+                <!-- <td>2</td> -->
+                <td>Trần Thị B</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!-- phần cuối của bảng -->
+             <tr>
+                <td colspan="2">tổng số sinh viên = 2</td>
+             </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
