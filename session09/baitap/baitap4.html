@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .container{
+            color: #fff;
+        }
+        .container .header{
+            background-color: violet;
+            margin-bottom: 10px;
+        }
+        .container .main{
+            display: flex ;
+            gap: 10px;
+        }
+        .main .sidebar{
+            flex: 1;
+            background-color: red;
+            height: 100px;
+        }
+        .main .content{
+            flex: 3;
+            background-color: green;
+            height: 100px;
+        }
+        .container .footer{
+            margin-top: 10px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            phần header
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                phần sidebar
+            </div>
+            <div class="content">
+                phần nội dung
+            </div>
+        </div>
+        <div class="footer">
+            phần chân trang
+        </div>
+    </div>
+</body>
+</html>
