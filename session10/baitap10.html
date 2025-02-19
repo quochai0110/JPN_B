@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: rgb(249, 241, 231);
+            display: flex;
+            justify-content: space-around;
+            height: 40px;
+            align-items: center;
+
+        }
+
+        .header .header_right .input_show {
+            width: 24px;
+        }
+
+        .header .header_right input {
+            border: none;
+            padding: 3px;
+            outline: none;
+        }
+
+        .header .header_right .input_default {
+            width: 80px;
+        }
+
+        .header .header_right .input_default::placeholder {
+            padding-left: 20px;
+        }
+
+        .main {
+            /* background-color: #e9a3a3;    */
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .main .item {
+            width: 22%;
+            /* background-color: blanchedalmond; */
+            border: 1px solid red;
+            height: 260px;
+            position: relative;
+            background-color: rgb(236, 238, 240);
+        }
+
+        .main .item .div_circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: tomato;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+
+
+        }
+        .main .item .item_image{
+            height: 150px;
+        }
+        .main .item .item_image img{
+            width: 100%;
+            height: 80%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <!-- phần đầu -->
+        <div class="header_lefr">
+            <span>icon</span>
+            <span>filter</span>
+            <span>icon</span>
+            <span>|</span>
+            <span>text</span>
+        </div>
+        <div class="header_right">
+            <span class="title_show">Show</span>
+            <input class="input_show" type="text" placeholder="16">
+            <span>short by</span>
+            <input class="input_default" type="text" placeholder="Default">
+        </div>
+    </div>
+    <div class="main">
+        <!-- phần nội dung -->
+        <div class="item">
+            <div class="div_circle">
+                50%
+            </div>
+            <div class="item_image">
+                <img src="data:image/jpeg;base64,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" alt="">
+            </div>
+            <p>Syltherine</p>
+            <p>Lorem, ipsum dolor.</p>
+            <span><strong>2.500.000</strong></span>
+            <del class="delete">3.500.000</del>
+        </div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+    </div>
+</body>
+
+</html>
