@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    Nhập số từ 0-999
+    sau đó in ra dạng chữ
+    let number= +promt("mời bạn nhập số bất kì");
+    1. phần trăm
+    862/100 = 8.62
+    931 %100= 9 dư 31
+    768 %10 = 76 dư 8
+        let phanTram= Math.floor(number/100);
+
+    2. phần chục
+        let phanChuc== Math.floor((number%100)/10)
+
+    3. phần đơn vị
+       let phanDonVi= number%10
+    -->
+       <script>
+        let number= +prompt("mời bạn nhập số từ 0-999");
+        let phanTram= Math.floor(number/100);
+        let phanChuc= Math.floor((number%100)/10);
+        let phanDonVi= number%10;
+        let result="";
+        if(number>0){
+            if(phanTram==1){
+                result+="Một trăm";
+            }else if(phanTram==2){
+                result+="Hai trăm";
+            }else if(phanTram==3){
+                result+="Ba trăm";
+            }
+        }
+        if(phanChuc>0){
+            if(phanChuc==1){
+                result+="mười";
+            }else if(phanChuc==2){
+                result+="Hai mươi";
+            }else if(phanChuc==3){
+                result+="Ba mươi";
+            }
+        }
+       
+        if(phanDonVi>0){
+            if(phanDonVi==1){
+                result+="mốt";
+            }else if(phanDonVi==2){
+                result+"hai";
+            }else if(phanDonVi==3){
+
+            }
+        }
+
+       </script>
+</body>
+</html>
