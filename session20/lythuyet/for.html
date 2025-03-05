@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+     FOR
+     cú pháp:
+     (): có 3 phần
+      P1: giá trị khởi tạo
+      P2: điều kiện
+      P3: bước nhảy
+      p4: thân for
+      LUỒNG THỰC THỊ
+      1. KIỂM TRA ĐIỀU KIỆN
+        NẾU ĐIỀU KIỆN THỎA MÃN THÌ CHẠY THÂN
+        CHẠY XONG THÂN QUAY VỀ BƯỚC NHẢY -- KIỂM TRA ĐIỀU KIỆN
+
+     Các lệnh điều khiển trong vòng lặp
+     1. break : dừng thoát vòng lặp
+    -->
+     <script>
+        for(let i=0; i<3; i++){
+           console.log(i);//0 1 2
+           for (let j = 1; j < 3; j++) {
+               if(j==2){
+                break;
+               }
+               console.log("j",j);//1  1 1
+               
+           }
+            
+        }
+     </script>
+</body>
+</html>
