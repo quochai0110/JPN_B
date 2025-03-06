@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        Trong JS có 2 nhóm kiểu dữ liệu
+        1. kiểu nguyên thủy, primitive type, kiểu đơn giản, tham trị
+            + number, string, null, NaN, boolean
+        2. kiểu phức tạp, refence type , kiểu tham chiếu
+           + array, function, object
+    
+    -->
+           <script>
+
+             // cách khai báo
+             // chỉ số đánh từ 0
+             // các phương thức làm việc với mảng 
+             // CRUD với mảng
+
+             /* 1. C: create Thêm
+                push(): thêm phần tử vào cuối
+                unshift(): thêm phần tử vào đầu
+                splice(): 
+                2. R: read đọc
+                for(): thường
+                for(in), for-of
+                3. U : update - cập nhật chỉnh sửa
+                 + có thể cập nhật theo index
+                 + splice()
+                4. D : delete (xóa)
+                 + shift ( xóa phần tử đầu)
+                 + pop() xóa phần tử cuối
+                 + splice(): xóa vị trí bất kì
+             
+             */
+            let numbers=[];
+            numbers.splice(1,1);
+            // numbers.splice(1,1,55);
+            // numbers.splice(2,1,25);
+           
+            // numbers.push(5);
+            // numbers.push(15);
+            // numbers.unshift(1);
+            // numbers.splice(2,0,10);
+            for (let i = 0; i < numbers.length; i++) {
+                // console.log("i",numbers[i]);
+                
+                
+            }
+            for (const abc in numbers) {
+                // trả về vị trí index
+                // console.log("for-in",numbers[abc]);
+                
+            }
+            for (const abc of numbers) {
+                // console.log("for-of",abc);
+                
+            }
+            console.log("mảng sau khi thêm phần tử:",numbers);
+            
+
+           </script>
+</body>
+</html>
