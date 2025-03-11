@@ -86,27 +86,19 @@ do {
             case 5:
             // In ra các số nguyên tố trong mảng và tính tổng 
             let total=0;
-            
             for(let i=0; i< arr.length;i++){
-
                 let count=0;
-            
                 for (let j=1; j<= arr[i];j++){
                     if(arr[i]%j==0){
                         count++;
-
                     }
                 }
                 if(count==2){
                     console.log("các số nguyên tố là",+arr[i]);
                     total += arr[i];
-                    console.log("tổng các phần tử số nguyên là",total);
-                    
+                    console.log("tổng các phần tử số nguyên là",total); 
                 }
-            
             }
-                
-            
                 break;
 
         default:
