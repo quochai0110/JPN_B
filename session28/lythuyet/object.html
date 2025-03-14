@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            đối tượng gồm thuộc tính và phương thức
+            Cách khai báo
+            1. let obj ={
+            }
+            khai báo đối tượng sinh viên
+            let students={
+                name:"nguyễn văn hiếu",
+                age:25,
+                adress:""
+
+            }
+                CURD với object
+                C: CREATE thêm thuộc tính 
+                U: Update cập nhật giá trị của thuộc tính
+                R: Read , hiển thị các thuộc tính và giá trị
+                D: Delete xóa thuộc tính
+        
+        */
+            let student={
+                name:"nguyễn tiến đạt", // key( property)
+                // key:123
+            }
+            student.age=25; // thêm thuộc tính cho đối tượng
+            student.address="hà nội";
+            student.address="HCM";
+            for (const key in student) {
+                // console.log("key",student[key]);
+                
+            }
+            delete student.address;// xóa thuộc tính của đối tượng
+            // console.log("student",student);
+
+
+           
+            
+            
+    </script>
+</body>
+</html>

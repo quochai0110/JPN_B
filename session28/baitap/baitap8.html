@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        Viết một chương trình có menu để quản 
+        lý nhân viên với các yêu cầu sau:
+    
+    -->
+    <script>
+        // khai báo mảng chứa danh sách nhân viên
+
+        let employees = [];
+        // khai báo đối tượng nhân viên
+        // let employee={
+        //     id:1,
+        //     name:"nguyễn tiến đat",
+        //     position:"developer",
+        //     salary:5000
+        // }
+        while (true) {
+            /* 
+            1. Thêm nhân viên mới.
+            2. Xóa nhân viên theo id.
+               Tìm thấy nhân viên có id confirm người dùng muốn xóa nhân viên hay không?
+                Không tìm thấy nhân viên có id thì hiển thị thông báo.
+            3. Cập nhật mức lương của nhân viên theo id
+            4. Tìm kiếm nhân viên theo tên.
+            */
+            let choice = +prompt("mời chọn các mục");
+            switch (choice) {
+                case 1:
+                    // viết hàm thêm nhân viên
+                    addEmployee();
+                    break;
+
+                default:
+                    break;
+            }
+            if(choice==0){
+                break;
+            }
+
+        }
+        // hàm thêm nhân viên
+        function addEmployee() {
+            let name = prompt("tên nhân viên");
+            let position = prompt("vị trí");
+            let salary = prompt("nhập lương");
+            // khởi tạo đối tượng
+            let employee = {
+                id: Math.floor(Math.random() * 565466646 + new Date().getMilliseconds()),
+                name: name,
+                position: position,
+                salary: salary
+            }
+            employees.push(employee);
+            console.log("thêm nhân viên thành công",employees);
+            
+        }
+    </script>
+</body>
+
+</html>

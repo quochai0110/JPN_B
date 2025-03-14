@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        callback: là 1 hàm được truyền làm đối số của hàm khác
+
+        */
+       let sdt;
+       function xinSoDt(callback){
+        console.log("đạt gọi cho Linh xin số Nhung");
+        setTimeout(() => {
+            console.log("đợi mình lấy số");
+            sdt=88888;
+            callback(sdt);
+            
+        }, 3000);
+       }
+       // dùng call back để xử lý vấn đề 
+       function goiSauKhiCoSo(abc) {
+            console.log(`Đạt gọi cho Nhung theo số ${abc}`);
+            
+       }
+       xinSoDt(goiSauKhiCoSo);
+    </script>
+</body>
+</html>
