@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* 
+            Các phương thức làm việc với mảng, giúp xử lý giải quyết vấn đề nhanh
+            ==> dùng for thường làm được hết
+            I- đầu vào
+            II- đầu ra
+            1. indexOf()
+                -đầu vào là phần tử cần kiểm tra
+                -đầu ra vị trí
+                    + nếu có trả về vị trí phần tử
+                    + nếu không có trả vè -1
+            2. includes()
+                -đầu vào là phần tử cần kiểm tra
+                -đầu ra trả về true/flase
+            3. filter(): lọc _ cũng tạo mảng mới 
+                _ đầu vào là 1 call back tức là 1 hàm
+                - đầu ra
+                    + trả về 1 cái mảng chứa các phần tử thỏa mãn điều kiện lọc
+            4. findIndex()
+                - đầu vào 1 callback tức là 1 hàm
+                - đầu ra
+                    + nếu có phần từ trả về vị trí
+                    + không thì trả về -1
+            5. find ()
+                -đầu vào nhận 1 hàm
+                - đầu ra 
+                    + nếu có trả về phần tử
+                    + không có trả về undefined
+            6. reduce(): tính toán giá trị
+               - đầu vào nhận vào 2 giá trị 1 là hàm, 2 là giá trị khởi tạo
+            7. forEach: đầu vào nhận vào hàm
+                + không trả về giá trị
+                + tương tác trực tiếp với các phần tử trong mảng
+            8. map()
+                + tạo ra mảng mới
+                + duyệt qua các phần tử
+
+
+        
+        */
+       let students=["hoa", "hồng", "nhung"];
+       let numbers =[11,3,44,3,5,77,6,66];
+    //    let result= numbers.filter(function name(item,index,arr) {
+    //         return item>20;
+    //    }) 
+    //    console.log(1111,result);
+    //    let index= students.findIndex((item,index)=>{
+    //                 return item=="nhung1";
+    //    })
+    //    console.log(index);
+
+     let products=[
+        {
+            name:"mì tôm",
+            price:5000,
+            id:1
+        },
+        {
+            name:"mèn mén",
+            price:15000,
+            id:2
+        }
+     ]
+       let result= products.find((element, index, arr)=>{
+            return element.id==3;
+       })
+       console.log(1111111,result);
+       
+
+       
+    </script>
+</body>
+</html>

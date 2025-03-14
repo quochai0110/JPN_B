@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            Khởi tạo nhập mảng gồm 10 phần tử, in ra các phần tử lớn = 10
+        */
+
+        let test1=[1,22,33,33,54,56,23,45,6,6];
+        let test2=[];
+        let test3="fdfd";
+        function filter(arr){
+            // kiểm tra dữ liệu có phải là mảng hay không
+            if(Array.isArray(arr)){
+                if(arr.length==0){
+                    console.log("mảng không chứa phần tử");
+                    return
+                }
+                let result= arr.filter((item)=>{
+                    return item>=10;
+                })
+                console.log(result);
+                
+            }else{
+                console.log("dữ liệu không hợp lệ");
+                
+            }
+        }
+        filter(test1);
+        filter(test2);
+        filter(test3);
+
+
+    </script>
+</body>
+</html>

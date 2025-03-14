@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        
+            Viết một function nhận vào tham số là một mảng gồm các phần tử cho trước, 
+            hàm sẽ sắp xếp các số chẵn tăng dần và giữ nguyên vị trí số lẻ.
+            B1: lọc các số chẵn đưa vào 1 evenArr cái mảng rỗng
+            B2: sắp xếp các phần tử trong cái mảng  evenArr
+            [ 5, 8, 6, 3, 4, 2, 7]
+             [8, 6, 4, 2] sắp xếp [2, 4, 6, 8];
+            B3: duyệt lại mảng ban đầu tìm vị trí số chẵn gán lại giá trị
+        */
+       let test1=[5,4,7,2,9,8];//
+       let test2=[2,8,3,6,8];//[2,6,3,8,8]
+       function updateArr(arr) {
+            let envenArr=[];
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]%2==0){
+                    envenArr.push(arr[i]);
+                }
+            }
+            
+            for(let i=0;i<envenArr.length-1;i++){
+                for(let j=0;j<envenArr.length-1-i;j++){
+                    if(envenArr[j+1]<envenArr[j]){
+                        let temp = envenArr[j];
+                        envenArr[j]=envenArr[j+1];
+                        envenArr[j+1]=temp;
+                    }
+                }
+            }
+
+            let count=0;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]%2==0){
+
+                    arr[i]=envenArr[count];
+                    count++;
+
+                }
+            }
+            console.log(arr);
+            
+       }
+       updateArr(test2);
+    </script>
+</body>
+</html>
