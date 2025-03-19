@@ -98,5 +98,14 @@ function addJob() {
 // console.log("giờ",new Date().getHours());
 // console.log("phút",new Date().getMinutes());
 
+/* 
+    tìm kiếm: find()
+    tìm kiếm vị trí: findIndex()
+    lọc: filter()
+    sắp xếp: sort()
+
+
+*/
+
 
 
