@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+   <div class="container" >
+        <progress id="progress" max="100" value="0">thanh tiến trình</progress>
+        <button onclick="increase()">tăng</button>
+        <button onclick="desc()">giảm</button>
+        <i class="fa-solid fa-eye"></i>
+        <i class="fa-solid fa-eye-slash"></i>
+   </div>
+    <script>
+        let valueProgressss = 0;
+        let opacity=0;
+        function increase() {
+            valueProgressss += 10;
+            if (valueProgressss > 100) {
+                valueProgressss = 100;
+            }
+            document.getElementById("progress").value = valueProgressss;
+            // console.log(document.getElementsByClassName("container")[0].style);
+            opacity+=0.1;
+            if(opacity>1){
+                opacity=1;
+            }
+            document.getElementsByClassName("container")[0].style.opacity=opacity;
+        }
+        function desc() {
+            valueProgressss -= 10;
+            if (valueProgressss < 0) {
+                valueProgressss = 0;
+            }
+            opacity-=0.1;
+            if(opacity<0.1){
+                opacity=0.1;
+            }
+            document.getElementsByClassName("container")[0].style.opacity=opacity;
+            document.getElementById("progress").value = valueProgressss;
+        }
+    </script>
+</body>
+
+</html>

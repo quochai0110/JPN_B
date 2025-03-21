@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=b, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pages{
+            display: flex;
+            /* background-color: red; */
+            gap: 5px;
+            
+        }
+        .pages li{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+        .active{
+            background-color: tomato !important;
+        }
+    </style>
+</head>
+<body>
+    <ul id="items">
+        <!-- <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li> -->
+    </ul>
+    <ul class="pages">
+        <!-- <button>pre</button>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <button>next</button> -->
+    </ul>
+    <script>
+        let numbers=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+        // mảng có 13 phần tử
+        let itemPage=4;
+        let pages= Math.ceil(numbers.length/itemPage); // ra số trang
+        let currentPage=1;// trang hiện tại
+        let start=0;
+        let end=4;
+        function calStartEnd() {
+            start= currentPage*itemPage-itemPage;// 8
+            end= currentPage*itemPage; //11
+        }
+        function showItems() {
+            let str="";
+            for (let i = 0; i < numbers.length; i++) {
+                    if(i>=start&&i<end){
+                        str+=`<li>${numbers[i]}</li>`
+                    }
+            }
+            document.getElementById("items").innerHTML=str;
+           
+        }
+        showItems();
+        // hiển thị số trang 
+        function showPages() {
+            let str="";
+            for (let i = 0; i < pages; i++) {
+                str+=` <li class="item-li" onclick=clickPage(${i+1})>${i+1}</li>`
+            }
+            document.getElementsByClassName("pages")[0].innerHTML=
+            `
+                <button>pre</button>
+                ${str}
+                <button>next</button>
+            `
+        }
+        showPages();
+        // function chọn vào từng trang
+        document.getElementsByClassName("item-li")[0].classList.add("active");
+        function clickPage(index) {
+            console.log("index",index);
+            currentPage=index;
+            calStartEnd();
+            showItems();
+            let arrLi= document.getElementsByClassName("item-li");
+            for (let i = 0; i < arrLi.length; i++) {
+                     if(i==index-1){
+                        arrLi[i].classList.add("active");
+                        console.log(arrLi[i]);
+                     }else{
+                        arrLi[i].classList.remove("active");
+                     }
+            }
+        }
+    </script>
+</body>
+</html>
