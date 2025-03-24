@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=visibility" />
+    <style>
+        .body1{
+            position: relative;
+            /* border: 1px solid black; */
+            width: 200px;
+        
+        }
+        .material-symbols-outlined{
+            margin: 15px;
+            right: 15px;
+            top: -15px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body1">
+        <input type="text" id="matKhau">
+        <span  class="material-symbols-outlined" onclick="hidePassWord()">
+            visibility
+        </span>
+    </div>
+    
+    <!-- 
+        <span class="material-symbols-outlined">
+        visibility_off
+        </span>
+    -->
+    <script>
+        function hidePassWord(){
+            console.log("click");
+            let password =document.getElementById("matkhau")
+            if(document.getElementById("matKhau").type=="text"){
+                document.getElementById("matKhau").type='password';
+                console.log("12213");
+            }
+        }
+    </script>
+</body>
+
+</html>
