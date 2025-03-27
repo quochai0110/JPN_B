@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main1">
+        <h1 >Mời bạn nhập tên</h1>
+        <span>
+            <input type="text" id="name" placeholder="Nhập tên ">
+            <button onclick="onButtunNanme()">Lưu</button>
+        </span>
+    </div>
+    <div class="main2">
+        <span>
+            <h1 id="title">chào bạn,  </h1>
+        </span>
+        <button onclick="changeName()">Đổi tên</button>
+    </div>
+    <script> 
+        function onButtunNanme() {
+            let name = document.getElementById("name").value;
+            console.log(name);
+            localStorage.setItem("name",name);
+            showName();
+        }
+        function showName(){
+            let name1 =  localStorage.getItem("name");
+            document.getElementById("title").innerHTML= " Chào bạn, " + name1;
+        }
+        showName();
+        function changeName(){
+             document.getElementById("name").value = localStorage.getItem("name");
+             onButtunNanme();
+        }
+        
+    </script>
+</body>
+
+</html>

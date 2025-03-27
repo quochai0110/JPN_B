@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightgrey;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box {
+            background-color: white;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .box img {
+            width: 80%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bạn thích món nào nhất</h1>
+    <div class="container">
+
+    </div>
+    <script>
+        // lay du kieu tren local hien thi tren html
+        let dish = JSON.parse(localStorage.getItem("dish"));
+        console.log(dish);
+        function render() {
+            let str = "";
+            for (let i = 0; i < dish.length; i++) {
+                str += `<div class="box">
+                            <img src="${dish[i].img}" alt="">
+                            <h3>${dish[i].name}</h3>
+                            <p>${dish[i].like} luot thich </p>
+                            <button onclick = like(${i})>Thích +1</button>
+                        </div> `;
+            }
+            console.log(str);
+            document.getElementsByClassName("container")[0].innerHTML = str;
+
+
+        }
+        render();
+        function like(index) {
+            if(dish[index].like == 0){
+                dish[index].like = 1;
+            }else{
+                dish[index].like = 0;
+            }
+            // dish[index].like = dish[index].like + 1;
+            localStorage.setItem("dish", JSON.stringify(dish));
+
+            render();
+        }
+    </script>
+</body>
+
+</html>

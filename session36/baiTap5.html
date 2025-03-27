@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./baiTap5.css">
+</head>
+
+<body>
+    <h2>🗂️ Quản lý công việc (Task Board)</h2>
+
+    <div class="task-input">
+        <input type="text" id="taskName" placeholder="Nhập tên công việc..." />
+        <button onclick="addJob()">Thêm</button>
+    </div>
+
+    <div class="board">
+        <div class="column" id="pendingCol">
+            <h3>🕐 Chờ xử lý</h3>
+            <div id="pendingTasks">
+                <!-- <p>cầu lông</p>
+                <p>bóng đá</p> -->
+            </div>
+        </div>
+        <div class="column" id="inProgressCol">
+            <h3>🔨 Đang làm</h3>
+            <div id="inProgressTasks"></div>
+        </div>
+        <div  class="column" id="doneCol">
+            <h3>✅ Hoàn thành</h3>
+            <div id="doneTasks"></div>
+        </div>
+    </div>
+    <script>
+        let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+        function addJob() {
+            let newId = jobs.length > 0 ? jobs[jobs.length - 1].id + 1 : 1;
+            let taskName = document.getElementById("taskName").value.trim();
+            let newJob = {
+                id: newId,
+                taskName: taskName,
+                status: 1
+            }
+            jobs.push(newJob);
+            localStorage.setItem("jobs", JSON.stringify(jobs));
+            document.getElementById("taskName").value = "";
+        }
+        function render() {
+            let strPending = "";
+            let strDoing = "";
+            let strDone = "";
+            let pending = jobs.filter(item => item.status == 1);
+            let doing = jobs.filter(item => item.status == 2);
+            let done = jobs.filter(item => item.status == 3);
+            for (let i = 0; i < pending.length; i++) {
+                strPending += `
+                        <p> 
+                            ${pending[i].taskName}
+                             <button onclick="changeStatus1(${i})">Chuyển Tiếp</button>
+                        </p>
+            `  
+            }
+            document.getElementById("pendingTasks").innerHTML=strPending;
+            for (let i = 0; i<doing.length; i++){
+                strDoing += `
+                        <p> 
+                            ${jobs[doing]}
+                            
+                        </p>
+            
+            `   
+            }
+            for (let i = 0; i<done.length; i++){
+                strDone += `
+                        <p> 
+                            ${jobs[done]}
+                            
+                        </p>
+            
+            `   
+            }
+            
+        }
+        render();
+        function changeStatus1(index) {
+         
+            
+            console.log(index);
+            
+        }
+    </script>
+</body>
+
+</html>
